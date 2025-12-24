@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>table style</title>
+        <meta charset="utf-8">
+
+        <style>
+            table{
+                border: 2px solid pink;
+                border-collapse: collapse; /*separate == default*/
+                width: 100%;
+                text-align: center;
+                /* 표 제목의 기본위치는 무조건 상단 .. 하단으로 */
+                caption-side: bottom;
+            }
+            th,td{
+                border: 1px solid pink;
+                padding: 10px;
+            }
+            tr th{
+                background-color: green;
+                color: white;
+            }
+            td:last-child{
+                text-align: left;
+            }
+            th:first-child,tr td:first-child{
+                width: 4em;
+            }
+            tr:nth-child(2n+1){ /* n이라고 적으면 자동으로 올라감.*/
+                background-color: #eee;
+            }
+            tr:hover{
+                background-color: #333;
+                color: #fff;
+            }
+
+            /* table 스타일 작업중 자식선택자(>)를 사용할때 유의할점*/
+            table>:nth-child(1){border: 5px solid blue;}
+            /* 직접 작성하지 않아도 실제 table안에 첫번째 자식은 tbody요소가 됨.(개발자 모드에서 확인 가능.)*/
+
+            /* table의 tr요소를 선택하려면 자손선택자를 써야 함. */
+            table tr{color: purple;}
+            table>tr{color: red;} /*이건 적용되지 않음. table의 자식중 tr은 없음. 숨겨진 tbody등의 자식만 있음.*/
+
+        </style>
+    </head>
+    <body>
+        
+        <table>
+            <caption>title</caption>
+            <tr>
+                <th>number</th>
+                <th>name</th>
+                <th>e-mail</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>hong</td>
+                <td>hong123@gmail.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>kim</td>
+                <td>kim123@gmail.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>choi</td>
+                <td>choi707@gmail.com</td>               
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>son</td>
+                <td>son7@gmail.com</td>
+            </tr>
+        </table>
+
+    </body>
+</html>

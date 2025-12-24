@@ -1,0 +1,70 @@
+ <!-- 단락이란 하나하나의 짧은 이야기 토막.
+  단락의 전후에 빈 줄이 추가된다. 이게 <p> 요소 
+    강제 줄바꿈 태그 '<br>'
+    프로그래머가 입력한 그대로 화면에 표시하는 태그 '<pre>' 근데 잘 안 씀
+    띄어쓰기 많이 쓰고 싶다면.. '&nbsp;' 공백문자 1개 -
+
+<!DOCTYPE html>
+<html>
+    1. 문서의 여러 정보를 설정하는 주소의 영역
+    <head>
+        <title>html text ex</title>
+    </head>
+    <body>
+        
+        이곳에 글씨를 쓰면 브라우저에 보입니다.<br> 줄바꿈-->
+        두번째 줄입니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gg <!--스페이스 바-->
+        특수문자 ~!@#$%^&*()
+        <!-- 주의할 특수문자 < > 이런 태그문에 사용하는 특수문자 <br> -->
+        p=10 
+        5<p                    ></p>
+
+        특수문자를 표시하고 싶다면 5 &lt; p
+        &gt; &yen; &nbsp;&copy;
+        <!-- 글의 한 단락을 구분해두는 요소 -->
+        <p>단락 요소는 한 줄을 차지하게 됨.</p>
+        <p>당연하게 이건 두번째 단락이 됨. 위아래 여백 존재</p>
+        <p>단락 안에서 엔터를 통해 줄을 바꿔도
+            화면에는 한줄로 보임
+        </p>
+        <p>
+            단락 안에서 줄바꿈 하기 <br>
+            여기는 <br> 두번째 <br>줄
+        </p>
+        <!-- 권장x 하지만 error가 발생하지 않음 -->
+        <p>
+            요소 안에 또 다시 <P>요소가</P>  있어도 되는 경우가 있음.
+        </p>
+        <p> 요소는 엔드태그가 있어야 하지만 .. 실수로 없애도 알아서 종료 함 
+        <p>다음 요소</p>
+        
+        <pre>
+            pre
+            이 안에 작성한 글은 
+            보이는 그대로 화면에 그려짐
+
+            # 이렇게도 잘 안씀
+
+            이런식으로  보임.
+                \pre
+        </pre>
+
+        <h1> This is heading element</h1>
+        <h2>This is heading element</h2>
+        <h3>This is heading element</h3>
+        <h4>This is heading element</h4>
+        <h5>This is heading element</h5> 
+        <h6>This is heading element</h6>
+        <!-- h6까지밖에 없으니 7을 입력하게 되면 헤드줄이 아닌 그냥 일반줄이 나옴 -->
+        <h7>This is heading element</h7>
+
+        <!-- 텍스트 서식관련 요소들 -->
+         <p>텍스트 <strong>강하게</strong 입니다.></p>
+         <p>텍스트 서식<em>강조</em>입니다.</p>
+         <p>코드 작성요소<code>a=10</code>입니다.</p>
+         <p>위첨자 <sup>위첨자</sup> 이고 <sub>아래첨자</sub>입니다.</p>
+
+         <!-- 화면에 수평선 그리기 요소[엔드태그가 없음 : empty element] -->
+          <hr>
+          <p>여기가 마지막</p>
+</html>

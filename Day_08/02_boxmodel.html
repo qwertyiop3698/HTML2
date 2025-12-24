@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>box model style</title>
+        <meta charset="utf-8">
+
+        <style>
+            p.aa{
+                border-style: solid; 
+                border-top-style: dotted;
+
+                /* 선 두께 */
+                border-width: 3px;
+                border-bottom-width: 8px;
+
+                /* 선 색상 */
+                border-color: red;
+                border-right-color: #00f;
+
+                /* 모서리 둥글게 */
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                /* 경계선을 이미지로.(권장하진 않음.) */
+                /* 선 두꼐가 얇으면.. 그림이 너무 작게 그려짐.*/
+                border: 30px solid transparent; /* 축약형 */
+                border-image: url("./image/border.png");
+                border-image-slice: 30 30; /* 높이, 너비순(그림을 9조각 냄)*/
+                border-image-repeat: stretch; /* default*/
+                border-image-repeat: round;
+
+                /* 요소크기 지정 스타일 속성 (요소 크기는 블럭 요소만 적용)*/
+                width: 70%;
+                height: 300px;
+                margin: 15%;
+                /* 요소를 가운데 정렬할때 왼쪽 마진을 계산하기 어려움 */
+                /* 요소를 중앙정렬할때 사용하기 좋은 자동 마진값 */
+                margin-left: auto;
+                margin-right: auto;
+                margin: 0 auto;
+            }
+
+            /* 인라인 요소에 너비를 지정 해보기..안됨. */
+            a{width: 100%; background-color: aqua;}
+            em{width: 100%; background-color: antiquewhite;}
+
+            /* 인라인 요소중에 너비가 조절되는 요소들*/
+            img{width: 500px; border: 1px solid black;}
+            input{width: 100%;}
+
+            /* 공간이 있어도 가지않음. */
+            #p1{border: 2px solid pink; width: 200px;}
+            #p2{border: 2px solid pink; width: 200px;}
+        </style>
+    </head>
+
+    <body>
+        
+        <!-- 1. 경계선 스타일링 -->
+        <p class="aa">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero quibusdam quo, facilis repudiandae iure quae velit modi aliquam pariatur repellat iste quis eaque cumque fugiat sint blanditiis unde eligendi.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate similique sint cum est soluta explicabo, maiores tempora porro! Veniam, perferendis? Magni, soluta temporibus. Sunt excepturi temporibus fuga maiores! Quisquam, quia.
+        </p>
+
+        <hr>
+        <!-- 2. 요소의 크기 스타일 속성(block요소만 사이즈가 조절됨. 인라인은 안됨.)-->
+        <!-- 인라인 요소 -->
+        <a href="">Google</a>
+        <em>Nice to meet you</em>
+
+        <!-- 인라인 요소중에서 너비가 조절되는 요소가 존재( inline-block 요소라고 부름.) -->
+        <img src="./image/image.png" alt="image">
+        <input type="text">
+
+        <!-- 블럭요소의 너비가 작아져서 옆에 공간이 있어도 다른 요소들은 옆에 놓여지지않음.-->
+        <p id="p1">Hello</p>
+        <p id="p2">Nice</p>
+
+        <hr>
+
+        <!-- margin:auto 값은 블럭요소만 가능함-->
+        <strong>WEB</strong>
+        <style>
+            strong{border: 1px solid red; margin-left: auto;}
+        </style>
+
+        <hr>
+
+        <!-- margin을 사용할때 주의점. 마진은 겹쳐짐. (음수 마진이 있으면 요소가 겹칠 수 있음.)-->
+        <div class="margin">
+            <p id="p3">p3</p>
+            <p id="p4">p4</p>
+        </div>
+        <style>
+            .margin{
+                border: 3px solid black;
+            }
+            #p3{background-color: red; margin: 0;}
+            #p4{background-color: green; margin: 0; margin-top: -10px;}
+        </style>
+
+        <hr>
+        <!-- 배경 색상, 이미지 -->
+        <p class="bg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo sunt quam vitae quod quasi quidem optio atque quis perspiciatis corporis, earum dignissimos cum dolore magnam, quo officia? Quis, amet maxime.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae harum consequatur maiores laboriosam iure officia alias dolorum, aspernatur nam qui, soluta reiciendis quis cum praesentium tempore veniam eveniet quibusdam quasi.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et porro iste accusamus voluptate animi, nemo corporis. Accusantium, magni ad odio quam tempore nisi magnam repellat doloremque soluta aperiam, nostrum sequi?
+        </p>
+        <style>
+            .bg{
+                background-color: skyblue;
+                background-image: url("image/image.png");
+                background-size: 200px 100px; /* 너비, 높이*/
+
+                background-repeat: repeat;
+                background-repeat: repeat-x;
+                background-repeat: repeat-y;
+                background-repeat: no-repeat;
+
+                background-position: center;
+                background-position: top right;
+                background-position: center bottom;
+
+            }
+        </style>
+
+        <!-- 배경이미지가 요소에 어떻게 붙어있는지 속성 -->
+        <p class="attach">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptate alias labore doloribus illo velit sunt eum iusto? Quod, possimus. Hic voluptatibus eveniet ab corrupti placeat recusandae aliquam perspiciatis inventore.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut necessitatibus odit architecto, ipsam molestiae veritatis! Voluptatum, possimus, eligendi asperiores, amet natus facilis tempore quod eveniet dolores accusamus repudiandae exercitationem! Eligendi?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, officiis at quo error repellat quasi maxime consequuntur numquam saepe quia nihil, facilis exercitationem perspiciatis iusto itaque repellendus magnam, explicabo quae.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit praesentium voluptatem impedit dicta, molestiae voluptates fugit eos assumenda molestias non ullam tenetur temporibus atque modi nostrum dignissimos cumque fuga aliquid!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam totam quo eaque error. Minima totam error dolorum illum amet hic nobis quaerat, dolores veritatis et numquam cum vitae reprehenderit voluptates.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate minima, facilis saepe debitis quaerat fugit ipsa! Adipisci autem blanditiis distinctio consequuntur dignissimos fugiat sunt commodi rem reprehenderit dolores? Ratione, nesciunt!
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga, adipisci. Suscipit unde voluptates molestias voluptas dolores inventore dolorum blanditiis reprehenderit qui officia sunt, omnis consequatur dolore reiciendis magnam enim iusto!
+        </p>
+        <style>
+            p.attach{
+                border: 1px solid pink;
+                width: 60%;
+                height: 300px;
+                overflow: scroll;
+                margin-left: auto;
+                margin-right: auto;
+
+                background-image: url("./image/image.png");
+                background-size: 200px 100px;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                background-attachment: scroll; /* 요소가 스크롤되면 같이 스크롤*/
+                background-attachment: local;
+                background-attachment: fixed;
+            }
+        </style>
+
+
+
+    </body>
+</html>

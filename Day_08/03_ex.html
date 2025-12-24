@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ancher & list style</title>
+        <meta charset="utf-8">
+
+        <style>
+            a:link{color: blueviolet;}
+            a:visited{color: green;}
+            a:hover{color: red; font-size: 2em;}
+            a:active{color: yellow;}
+
+            p:hover{color: greenyellow;}
+            img{width: 200px; border: 2px solid black; background-color: antiquewhite; border-radius: 50%;}
+            img:hover{background-color: gray; width: 230px;}
+
+            body{background-color: pink;}
+
+            ul{list-style-type: disc;} /* default */
+            ul{list-style-type: circle;}
+            ul{list-style-type: square; list-style-position: outside;} /* default */
+            ul{list-style-type: square; list-style-position: inside;}
+            ul{list-style-type: none;}
+            ul{list-style-image: url(./image/border.png);} /* 사이즈 조절이 안되서 사용 안 함 */
+
+            ol{list-style-type: lower-alpha;}
+            ol{list-style-type: lower-latin;} /* 알파벳과 비슷함.*/
+            ol{list-style-type: lower-roman;}
+            ol{list-style-type: lower-greek;}
+            ol{list-style-type: upper-alpha;}
+            ol{list-style-type: decimal;} /* default */
+            ol{list-style-type: decimal-leading-zero;}
+        </style>
+    </head>
+    <body>
+        <!-- anchor에 사용했던 스타일 -->
+        <a href="https://www.perplexity.ai" target="_blank">perplexity</a>
+
+        <!-- 일반 요소에도 hover같은 의사선택자 적용가능. -->
+        <p>Hello Web</p>
+        <img src="./image/image.png" alt="image">
+
+        <hr>
+
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ul>
+
+        <hr>
+
+        <ol>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+        </ol>
+    </body>
+</html>

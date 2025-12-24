@@ -1,0 +1,114 @@
+
+<!-- 번호 없는 리스트[ul]
+번호 있는 리스트[ol]
+정의 리스트 [dl] 
+'하이퍼링크'는 다른 문서로 저프할 수 있는 단어나 이미지
+ex)  <a herf="info.html">추가정보</a> 링크뒤에.. _blank== 빈 새탭에서 열기  _self== 지금탭에서 열기, 디폴트
+id속성: 같은 페이지 안에서 점프(이동)
+이미지는 <img> 태그 사용 
+<img src="sample.jpg" width='300', height='230' 사진이 깨지기 때문에 
+width, height 중 하나만 조절하는게 좋음 원래 두개 다 조정하지 않음
+alt 속성 브라우저가 어떤 이유로 이미지를 화면에 표시하지 못했을 경우에 표시되는 대체 텍스트(alternate text)를 지정 [굉장히 중요]
+이미지의 종류.
+
+1.JEPG
+실사사진과 같이 복잡하고 많은 색상으로 이루어진 이미지에 적합
+손실 압축 방식을 사용한다. 
+
+2.PNG 
+클립 아트와 같이 적은 수의 색상을 가진 이미지에 적합
+무손실 압축 방식
+
+3.GIF
+로고나 클립아트 형태의 이미지에 적합
+256 색상만을 지원
+투명 배경과 애니메이션을 지원한다. 
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>list anchor image element</title>
+    </head>
+    <body>
+
+        <!-- 1. list 요소 -->
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul>
+        <ol>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+        <dl>
+            <dt>aaa</dt>
+            <li>이것은 Defintion Data</li>
+            <dt>bbb</dt>
+            <li>이것은 Defintion Data2</li>
+        </dl>
+        <!--  2. 하이퍼링크 요소: anchor : a는 인라인 요소임 바로 옆에 적힘 -->
+          <!-- 2.1) 절대 경로 -->
+          <a href="https://www.naver.com">naver</a>
+          <br>
+          
+          <br>
+          <!-- 2.2) 상대경로 -->
+          <a href="./Ex_02_Text.html" target="_self">02 text 웹문서</a>
+          <br>
+          <a href="../../Phython/Projects/Web_Test/Index.html">파이썬 수업에서 만든 웹문서</a>
+          <br>
+          <!-- 2.3) 같은 문서 안에서 특정 위치로 스크롤 이동 -->
+           <a href="#kkk">도움말 위치로..</a>
+
+           <hr>
+           <h3 id="kkk">도움말</h3>
+
+           <!-- 인라인 요소의 줄바꿈을 위해 br 태그를 사용하는 대신 p요소 사용도 좋음 -->
+            <p><a href="">구글</a></p>
+
+            <!-- 리스트 요소안에 앵커요소 배치 가능 -->
+            <ul>
+                <li><a href="https://www.naver.com">naver</a></li>
+                <li><a href="https://www.google.com"target=_blank>Google</a>
+                <li><a href="https://www.daum.net">다음</a></li>
+            </ul>
+
+            <!-- 이미지 파일링크를 열기 -->
+            <p>
+                <a href="https://media.istockphoto.com/id/157507845/ko/%EC%82%AC%EC%A7%84/%EB%8F%8C%EA%B3%A0%EB%9E%98-%EB%A7%8C%EB%93%A4%EC%A7%84-%ED%91%B8%EB%A5%B8.jpg?s=1024x1024&w=is&k=20&c=yvAiu3Kf4KihgI3isaGD86sWyHC3bKzKhWNeiTklySQ=">이미지 링크</a>
+            </p>
+            <p>
+                <a href="../../Phython/Projects/Images/newyork.jpg">상대링크</a>
+            </p>
+
+            <!-- 웹 부라우저에서 보여줄 수 없는 파일 형식 링크 (자동 다운로드 됨.)-->
+            <p>
+                <a href="">압축파일 링크</a>
+                <a href="../../Phython/Projects/Exam/Ex07_Control_02.py">파이썬 파일</a>
+            </p>
+
+            <!-- 이메일 링크 -->
+             <p>
+                <a href="mailto:example123@ggg.com"></a>
+             </p>
+            <!-- 이미지 요소 -->
+            <img src="../../Phython/Projects/Images/sydney.jpg" alt="시드니">
+            <img src="../../Phython/Projects/Images/sydney.jpg" alt="시드니", width="100">
+            <img src="../../Phython/Projects/Images/sydney.jpg" alt="시드니", width="100%"> 
+            <img src="../../Phython/Projects/Images/sydney.jpg" alt="시드니", width="100" height="150">
+            <img src="https://media.istockphoto.com/id/157507845/ko/%EC%82%AC%EC%A7%84/%EB%8F%8C%EA%B3%A0%EB%9E%98-%EB%A7%8C%EB%93%A4%EC%A7%84-%ED%91%B8%EB%A5%B8.jpg?s=1024x1024&w=is&k=20&c=yvAiu3Kf4KihgI3isaGD86sWyHC3bKzKhWNeiTklySQ=" alt="pixabay image">
+            
+            <!-- image + anchor -->
+             <p>
+                <a href="../../Phython/Projects/Images/sydney.jpg"><img src="../../Phython/Projects/Images/sydney.jpg" alt="시드니">시드니</a>
+             </p>
+
+             <p>
+                <img src="./aaa.jpg" alt="대체 되는 글씨">
+             </p>
+        </body>
+</html>

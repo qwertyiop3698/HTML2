@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input element</title>
+</head>
+<body>
+
+    <h2>input element Test</h2>
+    <!-- 기본글씨 입력요소. 한줄만 입력 가능 -->
+
+    <input type="text" size="40" value="요소 값">
+
+    <p>
+    <!-- 비밀번호 입력 요소. 입력된 글씨가 가려짐 -->
+        <input type="password">
+    </p>
+    <!-- 라디오 버튼: single choice  [name 속성이 같으면 그룹으로 인식]-->
+    라디오 버튼:
+    <input type="radio" name="rg" value="aaa">aaa
+    <input type="radio" name="rg" value="bbb">bbb
+
+    <hr>
+
+    <!-- <label>요소를 이용하여 글씨를 눌렀을때 라디어버튼이 클릭되도록 연결해보기 -->
+    <input type="radio" name="rg2" id="rb1" checked="checked" value="male">
+    <label for="rb1">남성</label>
+    <input type="radio" name="rg2" id="rb2" value="female">
+    <label for="rb2">여성</label>
+    <!-- ** php에서는 선택된 radio버튼 요소의 value값이 전달됨. [식별자 : rg2]** -->
+
+    <hr>
+
+    <!-- 다중 선택 요소 multiple choice elememt : check box-->
+    <label><input type="checkbox" name="fruits" value="apple" checked>apple</label>
+    <label><input type="checkbox" name="fruits" value="banana">banana</label>
+    <label><input type="checkbox" name="fruits" value="orange"checked>orange</label>
+    <!-- php에는 선택된 checkbox들의 value값들이 배열[]로 전달됨. -->
+
+    <hr>
+
+    <!-- 제출버튼, 초기화 버튼 -->
+        <input type="submit" value="전송">
+        <input type="reset" value="리셋">
+    <br>
+
+    <!-- type 버튼 -->
+    <input type="button" value="중복체크" onclick="alert('중복된 아이디 입니다.')"> <!-- 경고 메세지 박스-->
+    <br>
+
+    <!-- button 요소 -->
+    <button onclick="alert('clicked~!')"><strong>click!</strong></button>
+    <!-- 버튼요소안에 이미지 배치 가능. -->
+    <button onclick="alert('good@@')"><img src="./image/kpj003.png" alt="ms 이미지" width="50"></button>
+
+    <br>
+
+    <!-- type='image' 버튼 [summit 타입과 같은 역할 - form요소 안에서 사용] -->
+    <input type="image" src="./image/kpj003.png" width="50" onclick="alert('ss')">
+
+    <!-- 여러줄 입력 요소 -->
+    <label for="in_msg">여러줄 입력:</label> <br>
+    <textarea name="msg" id="in_msg" cols="40" rows="5"></textarea>
+    
+    <hr>
+
+    <!-- 콤보박스 : sleect요소 -->
+    <select name="sel">
+        <option value=""selected>-----선택-----</option> <!-- 제일 처음 보이는 값.-->
+        <option value="aa">aaa</option>
+        <option value="bb">bbb</option>
+        <option value="cc" >ccc</option> 
+    </select>
+
+    <!-- 옵션그룹 -->
+    <select name="food">
+        <optgroup label="중식">
+            <option value="짜장">짜장</option>
+            <option value="짬">짬뽕</option>
+            <option value="볶">볶음밥</option>
+        </optgroup>
+
+        <optgroup label="한식">
+            <option value="김밥">김밥</option>
+            <option value="불고기">불고기</option>
+        </optgroup>
+    </select>
+
+    <hr>
+
+    <!-- 입력영역의 구분 요소 -->
+    <fieldset>
+        <legend>필드셋의 제목</legend>
+        <label>이름: <input type="text" name="name"></label> <br>
+        <label>나이: <input type="text" name="name"></label> <br>
+        <label>주소: <input type="text" name="name"></label>
+    </fieldset>
+
+
+
+
+
+
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
